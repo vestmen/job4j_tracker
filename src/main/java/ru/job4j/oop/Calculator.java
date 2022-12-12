@@ -15,11 +15,11 @@ public class Calculator {
         return x * a;
     }
 
-    public int divide(int a) {
+    public double divide(int a) {
         return a / x;
     }
 
-    public int sumAllOperation(int a) {
+    public double sumAllOperation(int a) {
         return sum(a) + minus(a) + multiply(a) + divide(a);
     }
 
@@ -31,9 +31,9 @@ public class Calculator {
         System.out.println(multiply);
         int minus = minus(10);
         System.out.println(minus);
-        int divide = calculator.multiply(5);
+        double divide = calculator.divide(5);
         System.out.println(divide);
-        int sumAll = calculator.sumAllOperation(5);
+        double sumAll = calculator.sumAllOperation(5);
         System.out.println(sumAll);
     }
 }
