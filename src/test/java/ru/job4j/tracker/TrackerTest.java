@@ -93,4 +93,15 @@ public class TrackerTest {
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
         assertThat(result).isFalse();
     }
+
+    @Test
+    public void whenAddItem() {
+        String[] answers = {"Fix PC"};
+        Input input = new StubInput(answers);
+        Tracker tracker = new Tracker();
+        StartUI.createItem(input, tracker);
+        Item created = tracker.findAll()[0];
+        Item expected = new Item("Fix PC");
+        assertThat(created.getName()).isEqualTo(expected.getName());
+    }
 }
