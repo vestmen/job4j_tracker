@@ -21,21 +21,21 @@ public class PasswordValidator {
             if (Character.isDigit(index)) {
                 countDigits = countDigits + 1;
             }
-            if (Character.isDigit(index)
+            if (!(Character.isDigit(index)
                     || Character.isUpperCase(index)
-                    || Character.isLowerCase(index)) {
+                    || Character.isLowerCase(index))) {
                 countSpecialSymbols = countSpecialSymbols + 1;
             }
         }
         if (countDigits == 0) {
             throw new IllegalArgumentException("Password should contain at least one figure");
         }
-        if (countSpecialSymbols == array.length) {
+        if (countSpecialSymbols == 0) {
             throw new IllegalArgumentException("Password should contain at least one special symbol");
         }
         String[] substrings = new String[] {"qwerty", "12345", "password", "admin", "user"};
-        for (int index = 0; index < substrings.length; index++) {
-            if (password.toLowerCase().contains(substrings[index])) {
+        for (String substring : substrings) {
+            if (password.toLowerCase().contains(substring)) {
                 throw new IllegalArgumentException("Password shouldn't contain substrings: qwerty, 12345, password, admin, user");
             }
         }
