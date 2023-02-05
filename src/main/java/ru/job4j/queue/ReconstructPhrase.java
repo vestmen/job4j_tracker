@@ -17,7 +17,6 @@ public class ReconstructPhrase {
         for (int index = 0; index < size; index++) {
             if (index % 2 == 0) {
                 s.append(evenElements.pollFirst());
-            } else {
                 evenElements.pollFirst();
             }
         }
