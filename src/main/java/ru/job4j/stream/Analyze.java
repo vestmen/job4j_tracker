@@ -50,7 +50,6 @@ public class Analyze {
         return stream
                 .flatMap(s -> s.subjects().stream())
                 .collect(Collectors.groupingBy(Subject::name,
-                        LinkedHashMap::new,
                         Collectors.summingDouble(Subject::score)))
                 .entrySet()
                 .stream()
